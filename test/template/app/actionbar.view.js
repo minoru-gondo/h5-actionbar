@@ -1,16 +1,36 @@
 var React = require('react');
-var H5Action = require('../../../src/action.js')
-    //import React from 'react';
-    //import H from '../../libs/h5mobile/h5frontend.js';
+var H5ActionBar = require('../../../src/actionbar.js');
 
 window.hsession = {
     language: 'pt_br'
 };
 
 var mock_store = {
-    salvar: {
-        ___mock___
-    }
+  salvar: {
+    labelText:'Salvar',
+    mode: 'visible',
+    kind: 'primary',
+    run: salva_info,
+    hintText: 'Salvar dados do paciente'
+  },
+  voltar: {
+    labelText:'Voltar',
+    mode: 'visible',
+    kind: 'secondary',
+    hintText: 'Sair da tela de edição do paciente'
+  },
+  tirar_foto: {
+    labelText:'Tirar Foto',
+    mode: 'visible',
+    kind: 'normal',
+    hintText: 'Tirar foto do paciente'
+  },
+  excluir: {
+    labelText:'Excluir',
+    mode: 'visible',
+    kind: 'normal',
+    hintText: 'Excluir paciente'
+  }
 };
 
 function salva_info(){
@@ -21,13 +41,12 @@ function salva_info(){
 
 var AppAction = React.createClass({
     render: function () {
-        return React.createElement(H5Action, {
-            store: mock_store,
-            action: 'salvar'
+        return React.createElement(H5ActionBar, {
+            store: mock_store
         });
     }
 });
 
 
 
-React.render(React.createElement(AppAction), document.body);
+React.render(<AppAction/>, document.body);
