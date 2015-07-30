@@ -1,6 +1,7 @@
 require('./actionbar.less');
 
 var React = require('react');
+var H5Action = require('h5-action/src/action.js');
 
 var HActionbar = React.createClass({
     propTypes: {
@@ -9,11 +10,22 @@ var HActionbar = React.createClass({
     render: function () {
         var actions = this.props.store.actions;
         var props = {};
+
+        var kinds = [];
         props.className = ['h_actionbar'];
         var children = [];
         for(var action in actions)
         {
-            var child = React.createElement(H5Action, {action:action, store:this.props.store});
+            var propsButton = {};
+            if(this.props.store.actions[action].kind == 'primary' || this.props.store.actions[action].kind == 'secondary')
+               propsButton.className = 'position_kinds_major';
+            if(this.props.store.actions[action].kind == 'tertiary' || this.props.store.actions[action].kind == '' || this.props.store.actions[action].kind == 'normal')
+               propsButton.className = 'position_kinds_minor';
+
+            propsButton.action = action;
+            propsButton.store = this.props.store.actions;
+
+            var child = React.createElement(H5Action, propsButton);
             children.push(child);
         }
 
