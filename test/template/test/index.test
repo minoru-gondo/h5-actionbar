@@ -1,6 +1,6 @@
 @@ set 
     gridUrl         http://192.168.25.102:4444/wd/hub
-    website         http://192.168.25.207:3080
+    website         http://192.168.25.229:3080
 
 @@ table browsers
     | browserName   | gridArgs                            |

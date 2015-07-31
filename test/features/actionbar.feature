@@ -22,9 +22,9 @@
   Exemplos:
 
     situacao        | estado | spec
-    ----------------------------------------
+    ----------------------------------------------
     Actionbar vazio |        | actionbar:
-                    |        |   height 70px
+                    |        |   inside partly div
                     |        |
                     |        |
                     |        |

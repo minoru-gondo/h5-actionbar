@@ -1,5 +1,7 @@
 @objects
-   actionbar   #app .h_actionbar
-
-actionbar:
-  absent
+   div   id  app 
+   actionbar  css .h_actionbar
+   
+   
+= actionbar section =
+    ___spec___
