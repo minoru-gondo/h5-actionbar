@@ -4,11 +4,12 @@
   Desejo utilizar o componente h5-actionbar
 
 
-Cenário: Tela de paciente
-  Dado que eu tenho uma barra de ações com as ações salvar, voltar, tirar foto e excluir
+  Cenário: Tela de paciente com ações [situacao] na barra de ações
+  Dado que eu tenho uma barra de ações com as ações [estado]
   Quando eu renderizar o actionbar
-  Então deverá ser exibido spec
+  Então deverá ser exibido [spec]
 
+  # ações : salvar, voltar, tirar foto, agendar e excluir
   #  E os actions mais importantes serão renderizados do lado inferior a direita no [desktop]
   #  E os actions menos importantes serão renderizados do lado inferior a esquerda no [desktop]
   #  Mas se os actions menos importantes forem mais de 3
@@ -17,16 +18,70 @@ Cenário: Tela de paciente
   #  E os actions menos importantes serão transformadas num menu no [mobile]
   #  E não terá hintText nos actions do [mobile]
 
-#
-#  Exemplos:
-#
-#    situacao | estado | spec
-#    ------------------------
-#
+
+  Exemplos:
+
+    situacao              | estado                                                                                                                | spec
+    -------------------------------------------------------------------------------------------------------------------------------------------------------------
+    Salvar e kind primary | salvar: {labelText:'Salvar', mode: 'visible', kind: 'primary', run: salva_info, hintText: 'Salvar dados do paciente'} | actionbar:
+                          |                                                                                                                       |   inside body
+                          |                                                                                                                       |
+                          |                                                                                                                       |
+                          |                                                                                                                       |
+                          |                                                                                                                       |
+                          |                                                                                                                       |
+                          |                                                                                                                       |
+                          |                                                                                                                       |
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#      salvar: {
+#        labelText:'Salvar',
+#        mode: 'visible',
+#        kind: 'primary',
+#        run: salva_info,
+#        hintText: 'Salvar dados do paciente'
+#      },
+#      voltar: {
+#        labelText:'Voltar',
+#        mode: 'visible',
+#        kind: 'secondary',
+#        hintText: 'Sair da tela de edição do paciente'
+#      },
+#      tirar_foto: {
+#        labelText:'Tirar Foto',
+#        mode: 'visible',
+#        kind: 'tertiary',
+#        hintText: 'Tirar foto do paciente'
+#      },
+#      agendar: {
+#        labelText:'Agendar',
+#        mode: 'visible',
+#        kind: 'normal',
+#        hintText: 'Agendar consulta do paciente'
+#      },
+#      excluir: {
+#        labelText:'Excluir',
+#        mode: 'visible',
+#        kind: '',
+#        hintText: 'Excluir paciente'
+#      }
 
 
 #  Exemplo:

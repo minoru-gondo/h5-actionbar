@@ -7,37 +7,7 @@ window.hsession = {
 
 var mock_store = {
  actions: {
-      salvar: {
-        labelText:'Salvar',
-        mode: 'visible',
-        kind: 'primary',
-        run: salva_info,
-        hintText: 'Salvar dados do paciente'
-      },
-      voltar: {
-        labelText:'Voltar',
-        mode: 'visible',
-        kind: 'secondary',
-        hintText: 'Sair da tela de edição do paciente'
-      },
-      tirar_foto: {
-        labelText:'Tirar Foto',
-        mode: 'visible',
-        kind: 'tertiary',
-        hintText: 'Tirar foto do paciente'
-      },
-      agendar: {
-        labelText:'Agendar',
-        mode: 'visible',
-        kind: 'normal',
-        hintText: 'Agendar consulta do paciente'
-      },
-      excluir: {
-        labelText:'Excluir',
-        mode: 'visible',
-        kind: '',
-        hintText: 'Excluir paciente'
-      }
+     ___mock___
   }
 };
 
