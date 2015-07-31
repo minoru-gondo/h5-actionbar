@@ -1,8 +1,5 @@
-=================================================
-actionbar       css    div.h_actionbar
-body             id    app
-btn_salvar      css    button.h_action.salvar
-=================================================
+@objects
+   actionbar   #app .h_actionbar
 
-
-___spec___
+actionbar:
+  absent

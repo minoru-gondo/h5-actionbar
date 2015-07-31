@@ -4,7 +4,7 @@
   Desejo utilizar o componente h5-actionbar
 
 
-  Cenário: Tela de paciente com ações [situacao] na barra de ações
+  Cenário: Tela de paciente, situação: [situacao]
   Dado que eu tenho uma barra de ações com as ações [estado]
   Quando eu renderizar o actionbar
   Então deverá ser exibido [spec]
@@ -21,22 +21,22 @@
 
   Exemplos:
 
-    situacao              | estado                                                                                                                | spec
-    -------------------------------------------------------------------------------------------------------------------------------------------------------------
-    Salvar e kind primary | salvar: {labelText:'Salvar', mode: 'visible', kind: 'primary', run: salva_info, hintText: 'Salvar dados do paciente'} | actionbar:
-                          |                                                                                                                       |   inside body
-                          |                                                                                                                       |
-                          |                                                                                                                       |
-                          |                                                                                                                       |
-                          |                                                                                                                       |
-                          |                                                                                                                       |
-                          |                                                                                                                       |
-                          |                                                                                                                       |
+    situacao        | estado | spec
+    ----------------------------------------
+    Actionbar vazio |        | actionbar:
+                    |        |   height 70px
+                    |        |
+                    |        |
+                    |        |
+                    |        |
+                    |        |
+                    |        |
+                    |        |
 
 
 
 
-
+#    Salvar e kind primary | salvar: {labelText:'Salvar', mode: 'visible', kind: 'primary', run: salva_info, hintText: 'Salvar dados do paciente'}
 
 
 
