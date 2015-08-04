@@ -21,21 +21,20 @@
 
   Exemplos:
 
-    situacao        | estado | spec
-    ----------------------------------------------
-    Actionbar vazio |        | actionbar:
-                    |        |   inside partly div
-                    |        |
-                    |        |
-
-
-
-
-#    Salvar e kind primary | salvar: {labelText:'Salvar', mode: 'visible', kind: 'primary', run: salva_info, hintText: 'Salvar dados do paciente'}
-
-
-
-
+    situacao                                | estado                                                                                                                                                                                                                                  | spec
+    -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    Actionbar vazio                         |                                                                                                                                                                                                                                         | actionbar:
+                                            |                                                                                                                                                                                                                                         |   inside partly div
+    -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    Actionbar com botão primary             | salvar: {labelText:'Salvar', mode: 'visible', kind: 'primary', run: salva_info, hintText: 'Salvar dados do paciente'}                                                                                                                   | btn_primary:
+                                            |                                                                                                                                                                                                                                         |   inside actionbar 3 to 10 px right,929 to 959 px left, 13px top, 31px bottom
+    -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    Actionbar com botão secondary           | voltar: {labelText:'Voltar', mode: 'visible', kind: 'secondary', hintText: 'Sair da tela de edição do paciente'}                                                                                                                        | btn_secondary:
+                                            |                                                                                                                                                                                                                                         |   inside actionbar 3 to 10 px right,929 to 959 px left, 13px top, 31px bottom
+    -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    Actionbar com botão primary e secondary | salvar: {labelText:'Salvar', mode: 'visible', kind: 'primary', run: salva_info, hintText: 'Salvar dados do paciente'}, voltar: {labelText:'Voltar', mode: 'visible', kind: 'secondary', hintText: 'Sair da tela de edição do paciente'} | btn_secondary:
+                                            |                                                                                                                                                                                                                                         |   near btn_primary 6px left,-182 px right, -36px top, -36px bottom
+                                            |                                                                                                                                                                                                                                         |
 
 
 

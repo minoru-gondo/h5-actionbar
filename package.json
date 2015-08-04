@@ -16,7 +16,7 @@
     "css-loader": "^0.14.4",
     "flowcheck": "^0.2.7",
     "flowcheck-loader": "^1.0.0",
-    "galenframework-cli": "^2.0.3",
+    "galenframework-cli": "^2.0.5",
     "h5-test": "latest",
     "jsx-loader": "^0.13.2",
     "less-loader": "^2.2.0",
