@@ -17,6 +17,13 @@ module.exports = function (library, expect, h5_test) {
             h5_test.check('test/teste_inicial.spec');
             next();
         })
+        .then('o novo nome do action será ([^\u0000]*)', function (nome, next) {
+            if (nome) {
+                h5_test.replace('___nome___', nome);
+                h5_test.run('test/troca_nome.js');
+            }
+            next();
+        });
 };
 
 
