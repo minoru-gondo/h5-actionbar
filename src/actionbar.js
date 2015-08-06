@@ -10,13 +10,17 @@ var HActionbar = React.createClass({
     render: function () {
         var actions = this.props.store.actions;
         var props = {};
-
+        var i = 0;
         var kinds = [];
         props.className = ['h_actionbar'];
         var children = [];
         for(var action in actions)
         {
+            i++;
             var propsButton = {};
+            if(this.props.store.actions[action].kind != 'primary' && i == 1) {
+                throw "O primeiro action precisa ter kind primary";
+            }
             if(this.props.store.actions[action].kind == 'primary' || this.props.store.actions[action].kind == 'secondary')
                propsButton.className = 'position_kinds_major';
             if(this.props.store.actions[action].kind == 'tertiary' || this.props.store.actions[action].kind == '' || this.props.store.actions[action].kind == 'normal')
