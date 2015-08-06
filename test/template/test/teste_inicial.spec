@@ -6,6 +6,7 @@
    btn_tertiary   css .h_actionbar button.tirar_foto 
    btn_normal   css  .h_actionbar button.agendar 
    btn_vazio   css   .h_actionbar button.excluir
+   btn_inside_partly_btn  css  .h_actionbar button.btn_inside_partly_btn
    
 = actionbar section =
     ___spec___

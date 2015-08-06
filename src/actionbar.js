@@ -21,6 +21,9 @@ var HActionbar = React.createClass({
             if(this.props.store.actions[action].kind != 'primary' && i == 1) {
                 throw "O primeiro action precisa ter kind primary";
             }
+            if(this.props.store.actions[action].kind == 'test'){
+               propsButton.className = 'inside_partly';
+            }
             if(this.props.store.actions[action].kind == 'primary' || this.props.store.actions[action].kind == 'secondary')
                propsButton.className = 'position_kinds_major';
             if(this.props.store.actions[action].kind == 'tertiary' || this.props.store.actions[action].kind == '' || this.props.store.actions[action].kind == 'normal')
