@@ -9,6 +9,8 @@ var HActionbar = React.createClass({
     },
     render: function () {
         var actions = this.props.store.actions;
+        if(Object.keys(actions).length == 0)
+            throw "O actionbar não pode ficar sem actions";
         var props = {};
         var i = 0;
         var kinds = [];
