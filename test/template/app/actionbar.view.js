@@ -30,9 +30,7 @@ var AppAction = React.createClass({
     render: function () {
         return React.createElement(H5ActionBar, {
             store: mock_store,
-            icon: 'fa fa-ellipsis-v fa-2x',
-            left: 20,
-            bottom: 20
+            icon: 'fa fa-ellipsis-v fa-2x'
         });
     }
 });
