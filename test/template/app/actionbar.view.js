@@ -7,7 +7,8 @@ window.hsession = {
 
 var mock_store = {
  actions: {
-     ___mock___
+     ___mock___,
+     ___menudropdown___
   }
 };
 
@@ -28,7 +29,10 @@ function pega_dados_troca_nome(){
 var AppAction = React.createClass({
     render: function () {
         return React.createElement(H5ActionBar, {
-            store: mock_store
+            store: mock_store,
+            icon: 'fa fa-ellipsis-v fa-2x',
+            left: 20,
+            bottom: 20
         });
     }
 });

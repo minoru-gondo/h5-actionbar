@@ -17,6 +17,11 @@ module.exports = function (library, expect, h5_test) {
             h5_test.check('test/teste_inicial.spec');
             next();
         })
+        .given('se for necessário exibirá ([^\u0000]*)', function (menudropdown, next) {
+            expect(menudropdown, 'menudropdown').to.be.an('string');
+            h5_test.replace('___menudropdown___', menudropdown);
+            next();
+        })
 };
 
 
