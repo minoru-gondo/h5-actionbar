@@ -24,15 +24,15 @@ var HActionbar = React.createClass({
             var propsMenuDropdown = {};
             var child;
             var child_dropdown;
-            if(this.props.store.actions[action].kind != 'primary' && i == 1 && action != 'menu') {
-                throw "O primeiro action precisa ter kind primary";
+            if(i == (Object.keys(actions).length) && this.props.store.actions[action].kind != 'primary'){
+                throw "O ultimo action precisa ter kind primary";
             }
             if(this.props.store.actions[action].kind == 'test'){
                propsButton.className = 'inside_partly';
             }
             if(this.props.store.actions[action].kind == 'primary' || this.props.store.actions[action].kind == 'secondary')
                propsButton.className = 'position_kinds_major';
-            if(this.props.store.actions[action].kind == 'tertiary' || this.props.store.actions[action].kind == '' || this.props.store.actions[action].kind == 'normal')
+            if(this.props.store.actions[action].kind == 'tertiary' || this.props.store.actions[action].kind == '' || this.props.store.actions[action].kind == undefined)
                propsButton.className = 'position_kinds_minor';
             if(action == 'menu'){
                propsMenuDropdown.menu = this.props.store.actions.menu;
