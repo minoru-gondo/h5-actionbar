@@ -13,19 +13,19 @@ var HActionbar = React.createClass({
         if(Object.keys(actions).length == 0)
             throw "O actionbar não pode ficar sem actions";
         var props = {};
-        var i = 0;
         var kinds = [];
+        var k = false;
         props.className = ['h_actionbar'];
         var children = [];
         for(var action in actions)
         {
-            i++;
+
             var propsButton = {};
             var propsMenuDropdown = {};
             var child;
             var child_dropdown;
-            if(i == (Object.keys(actions).length) && this.props.store.actions[action].kind != 'primary'){
-                throw "O ultimo action precisa ter kind primary";
+            if(this.props.store.actions[action].kind == 'primary' && k == false){
+                k = true;
             }
             if(this.props.store.actions[action].kind == 'test'){
                propsButton.className = 'inside_partly';
@@ -51,6 +51,9 @@ var HActionbar = React.createClass({
             child = React.createElement(H5Action, propsButton);
             children.push(child);
             }
+        }
+        if(k != true){
+            throw "É necessário ter um action com kind primary";
         }
 
         return (React.createElement("div", props, children)
