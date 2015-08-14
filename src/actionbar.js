@@ -36,7 +36,7 @@ var HActionbar = React.createClass({
                propsButton.className = 'position_kinds_minor';
             if(action == 'menu'){
                propsMenuDropdown.menu = this.props.store.actions.menu;
-               propsMenuDropdown.icon = this.props.icon;
+               propsMenuDropdown.icon = this.props.icon + " position_icon_actionbar";
                propsMenuDropdown.left = this.props.left;
                propsMenuDropdown.right = this.props.right;
                propsMenuDropdown.top = this.props.top;
