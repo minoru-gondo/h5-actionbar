@@ -9,57 +9,74 @@ var HActionbar = React.createClass({
         store: React.PropTypes.object.isRequired
     },
     render: function () {
-        var actions = this.props.store.actions;
-        if(Object.keys(actions).length == 0)
-            throw "O actionbar não pode ficar sem actions";
-        var props = {};
-        var kinds = [];
-        var k = false;
-        props.className = ['h_actionbar'];
-        var children = [];
-        for(var action in actions)
+        var _this=this;
+        var store = this.props.store;
+        var actions = store.actions;
+
+        var children = [], dropdownMenuItems;
+        var action_names = Object.keys(actions);
+        render_primary()
+        render_secondary()
+        render_tertiary()
+        render_tertiary()
+        render_tertiary()
+        while (action_names.length > children.length + (dropdownMenuItems?dropdownMenuItems.length:0))
+            render_menu_item();
+        if (dropdownMenuItems)
+            createDropdownMenu();
+        children.unshift(React.createElement("button", {style: {position: 'fixed', top: 0, right: 0},onClick: function(){_this.refs.menu.toggleDropDown()}}, 'menu'));
+        return React.createElement("div", {className: 'h_actionbar'}, children);
+
+        function render_primary()
         {
-
-            var propsButton = {};
-            var propsMenuDropdown = {};
-            var child;
-            var child_dropdown;
-            if(this.props.store.actions[action].kind == 'primary' && k == false){
-                k = true;
-            }
-            if(this.props.store.actions[action].kind == 'test'){
-               propsButton.className = 'inside_partly';
-            }
-            if(this.props.store.actions[action].kind == 'primary' || this.props.store.actions[action].kind == 'secondary')
-               propsButton.className = 'position_kinds_major';
-            if(this.props.store.actions[action].kind == 'tertiary' || this.props.store.actions[action].kind == '' || this.props.store.actions[action].kind == undefined)
-               propsButton.className = 'position_kinds_minor';
-            if(action == 'menu'){
-               propsMenuDropdown.menu = this.props.store.actions.menu;
-               propsMenuDropdown.icon = this.props.icon + " position_icon_actionbar";
-               propsMenuDropdown.left = this.props.left;
-               propsMenuDropdown.right = this.props.right;
-               propsMenuDropdown.top = this.props.top;
-               propsMenuDropdown.bottom = this.props.bottom;
-               child_dropdown = React.createElement(H5MenuDropdown, propsMenuDropdown);
-               children.push(child_dropdown);
-            }
-            if(action != 'menu'){
-            propsButton.action = action;
-            propsButton.store = this.props.store.actions;
-
-            child = React.createElement(H5Action, propsButton);
-            children.push(child);
-            }
-        }
-        if(k != true){
-            throw "É necessário ter um action com kind primary";
+            if (children.length>=action_names.length)
+                return;
+            var action_name = action_names[children.length];
+            var child = React.createElement(H5Action, {store: store, action: action_name, className: 'position_right'});
+            children.unshift(child);
         }
 
-        return (React.createElement("div", props, children)
+        function render_secondary()
+        {
+            if (children.length>=action_names.length)
+                return;
+            var action_name = action_names[children.length];
+            var child = React.createElement(H5Action, {store: store, action: action_name, className: 'position_right'});
+            children.unshift(child);
+        }
 
+        function render_tertiary()
+        {
+            if (children.length>=action_names.length)
+                return;
+            var action_name = action_names[children.length];
+            var child = React.createElement(H5Action, {store: store, action: action_name, className: 'position_left'});
+            children.unshift(child);
+        }
 
-        );
+        function render_menu_item()
+        {
+            if (children.length + (dropdownMenuItems?dropdownMenuItems.length:0) >= action_names.length)
+                return;
+            if (!dropdownMenuItems)
+               dropdownMenuItems = []
+            var action_name = action_names[children.length + dropdownMenuItems.length];
+            dropdownMenuItems.unshift(actions[action_name]);
+        }
+
+        function createDropdownMenu()
+        {
+//               propsMenuDropdown.left = this.props.left;
+//               propsMenuDropdown.right = this.props.right;
+//               propsMenuDropdown.top = this.props.top;
+//               propsMenuDropdown.bottom = this.props.bottom;
+               var chield = React.createElement(H5MenuDropdown, {
+                   ref: 'menu',
+                   actions: dropdownMenuItems,
+                   icon: _this.props.icon + " position_icon_actionbar"
+               });
+               children.unshift(chield);
+        }
 
     }
 });
