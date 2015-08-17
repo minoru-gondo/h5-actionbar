@@ -10,8 +10,8 @@
   "license": "ISC",
   "dependencies": {
     "react": "^0.13.3",
-    "h5-dropdown": "0.0.1",
-    "h5-menudropdown": "0.0.1"
+    "h5-dropdown": "latest",
+    "h5-menudropdown": "latest"
   },
   "devDependencies": {
     "autoprefixer-loader": "^2.0.0",
