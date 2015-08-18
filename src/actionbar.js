@@ -51,7 +51,7 @@ var HActionbar = React.createClass({
                 return;
             var action_name = action_names[children.length];
             var child = React.createElement(H5Action, {store: store, key: "actionBarTertiary_" + action_name, action: action_name, run: function(){}, className: 'position_left'});
-            children.unshift(child);
+            children.push(child);
         }
 
         function render_menu_item()
