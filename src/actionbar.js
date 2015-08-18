@@ -42,7 +42,7 @@ var HActionbar = React.createClass({
                 return;
             var action_name = action_names[children.length];
             var child = React.createElement(H5Action, {store: store, action: action_name, key: "actionBarSecondary_" + action_name, run: function(){}, className: 'position_right'});
-            children.unshift(child);
+            children.push(child);
         }
 
         function render_tertiary()
