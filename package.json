@@ -11,7 +11,8 @@
   "dependencies": {
     "react": "^0.13.3",
     "h5-dropdown": "latest",
-    "h5-menudropdown": "latest"
+    "h5-menudropdown": "latest",
+    "h5-action": "latest"
   },
   "devDependencies": {
     "autoprefixer-loader": "^2.0.0",
