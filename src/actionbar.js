@@ -32,6 +32,8 @@ var HActionbar = React.createClass({
             if (children.length>=action_names.length)
                 return;
             var action_name = action_names[children.length];
+            if(store.actions[action_name].kind != 'primary')
+                throw 'O primeiro action precisa ter kind: "primary"';
             var child = React.createElement(H5Action, {store: store, action: action_name, key: "actionBarPrimary_" + action_name, run: function(){}, className: 'position_right'});
             children.unshift(child);
         }
@@ -47,10 +49,14 @@ var HActionbar = React.createClass({
 
         function render_tertiary()
         {
+            var is_menudropdown;
             if (children.length>=action_names.length)
                 return;
+            if(action_names.length > 5){
+                is_menudropdown = 'position_actions_tertiary';
+            }
             var action_name = action_names[children.length];
-            var child = React.createElement(H5Action, {store: store, key: "actionBarTertiary_" + action_name, action: action_name, run: function(){}, className: 'position_left'});
+            var child = React.createElement(H5Action, {store: store, key: "actionBarTertiary_" + action_name, action: action_name, run: function(){}, className: 'position_left ' + is_menudropdown});
             children.push(child);
         }
 

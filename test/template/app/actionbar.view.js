@@ -17,7 +17,7 @@ var mock_store = {
         voltar: {
             labelText: 'Voltar',
             mode: 'visible',
-            kind: 'secondary',
+            kind: 'primary',
             run: function () {
                 alert("OK");
             },
@@ -125,7 +125,8 @@ var AppAction = React.createClass({
     render: function () {
         return React.createElement(H5ActionBar, {
             store: mock_store,
-            icon: 'fa fa-ellipsis-v fa-2x'
+            icon: 'fa fa-ellipsis-v fa-2x',
+            className: ' position_icon_actionbar'
         });
     }
 });
