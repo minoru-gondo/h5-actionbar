@@ -12,14 +12,14 @@ var HActionbar = React.createClass({
         var _this=this;
         var store = this.props.store;
         var actions = store.actions;
-
+        var width_app = document.querySelector("html");
         var children = [], dropdownMenuItems;
+        var k = 3;
         var action_names = Object.keys(actions);
         render_primary()
         render_secondary()
         render_tertiary()
-        render_tertiary()
-        render_tertiary()
+
         while (action_names.length > children.length + (dropdownMenuItems?Object.keys(dropdownMenuItems).length:0))
             render_menu_item();
         if (dropdownMenuItems)
@@ -49,8 +49,27 @@ var HActionbar = React.createClass({
 
         function render_tertiary()
         {
+
+            var valida_action = false;
+            if(width_app && width_app.offsetWidth <= 530 && k == 3){
+                valida_action = true;
+                k = k-2;
+                render_menu_item(valida_action);
+            }
+            if(width_app && width_app.offsetWidth <= 442 && k == 1){
+                valida_action = true;
+                k = k-2;
+                render_menu_item(valida_action);
+            }
+            if(width_app && width_app.offsetWidth <= 354 && k == -1){
+                valida_action = true;
+                k = k-2;
+                render_menu_item(valida_action);
+            }
+            while(k > 0){
+
             var is_menudropdown;
-            if (children.length>=action_names.length)
+            if (children.length >= action_names.length)
                 return;
             if(action_names.length > 5){
                 is_menudropdown = 'position_actions_tertiary';
@@ -58,14 +77,21 @@ var HActionbar = React.createClass({
             var action_name = action_names[children.length];
             var child = React.createElement(H5Action, {store: store, key: "actionBarTertiary_" + action_name, action: action_name, run: function(){}, className: 'position_left ' + is_menudropdown});
             children.push(child);
+            k--;
+            }
         }
 
-        function render_menu_item()
+        function render_menu_item(valida_action)
         {
             if (children.length + (dropdownMenuItems?Object.keys(dropdownMenuItems).length:0) >= action_names.length)
                 return;
             if (!dropdownMenuItems)
                dropdownMenuItems = {}
+            if(valida_action == true){
+            var action_name = action_names[children.length + Object.keys(dropdownMenuItems).length + k];
+            valida_action = false;
+            }
+            else
             var action_name = action_names[children.length + Object.keys(dropdownMenuItems).length];
             dropdownMenuItems[action_name] = actions[action_name];
         }
