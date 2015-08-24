@@ -23,11 +23,11 @@ var HActionbar = React.createClass({
         render_tertiary()
         render_tertiary()
         }
-        if (width_app && width_app.offsetWidth <= 638 && width_app.offsetWidth >= 580) {
+        if (width_app && width_app.offsetWidth <= 638 && width_app.offsetWidth >= 570) {
         render_tertiary()
         render_tertiary()
         }
-        if(width_app && width_app.offsetWidth <= 530 && width_app.offsetWidth >= 460){
+        if(width_app && width_app.offsetWidth <= 569 && width_app.offsetWidth >= 500){
         render_tertiary()
         }
 
