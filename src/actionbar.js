@@ -18,16 +18,16 @@ var HActionbar = React.createClass({
         var action_names = Object.keys(actions);
         render_primary()
         render_secondary()
-        if(width_app && width_app.offsetWidth >= 531){
+        if(width_app && width_app.offsetWidth >= 639){
         render_tertiary()
         render_tertiary()
         render_tertiary()
         }
-        if (width_app && width_app.offsetWidth <= 530 && width_app.offsetWidth >= 443) {
+        if (width_app && width_app.offsetWidth <= 638 && width_app.offsetWidth >= 521) {
         render_tertiary()
         render_tertiary()
         }
-        if(width_app && width_app.offsetWidth <= 442 && width_app.offsetWidth >= 375){
+        if(width_app && width_app.offsetWidth <= 520 && width_app.offsetWidth >= 450){
         render_tertiary()
         }
 
