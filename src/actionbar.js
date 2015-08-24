@@ -18,7 +18,18 @@ var HActionbar = React.createClass({
         var action_names = Object.keys(actions);
         render_primary()
         render_secondary()
+        if(width_app && width_app.offsetWidth >= 531){
         render_tertiary()
+        render_tertiary()
+        render_tertiary()
+        }
+        if (width_app && width_app.offsetWidth <= 530 && width_app.offsetWidth >= 443) {
+        render_tertiary()
+        render_tertiary()
+        }
+        if(width_app && width_app.offsetWidth <= 442 && width_app.offsetWidth >= 375){
+        render_tertiary()
+        }
 
         while (action_names.length > children.length + (dropdownMenuItems?Object.keys(dropdownMenuItems).length:0))
             render_menu_item();
@@ -49,25 +60,6 @@ var HActionbar = React.createClass({
 
         function render_tertiary()
         {
-
-            var valida_action = false;
-            if(width_app && width_app.offsetWidth <= 530 && k == 3){
-                valida_action = true;
-                k = k-2;
-                render_menu_item(valida_action);
-            }
-            if(width_app && width_app.offsetWidth <= 442 && k == 1){
-                valida_action = true;
-                k = k-2;
-                render_menu_item(valida_action);
-            }
-            if(width_app && width_app.offsetWidth <= 354 && k == -1){
-                valida_action = true;
-                k = k-2;
-                render_menu_item(valida_action);
-            }
-            while(k > 0){
-
             var is_menudropdown;
             if (children.length >= action_names.length)
                 return;
@@ -77,8 +69,6 @@ var HActionbar = React.createClass({
             var action_name = action_names[children.length];
             var child = React.createElement(H5Action, {store: store, key: "actionBarTertiary_" + action_name, action: action_name, run: function(){}, className: 'position_left ' + is_menudropdown});
             children.push(child);
-            k--;
-            }
         }
 
         function render_menu_item(valida_action)
