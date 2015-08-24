@@ -14,7 +14,6 @@ var HActionbar = React.createClass({
         var actions = store.actions;
         var width_app = document.querySelector("html");
         var children = [], dropdownMenuItems;
-        var k = 3;
         var action_names = Object.keys(actions);
         render_primary()
         render_secondary()
@@ -77,7 +76,7 @@ var HActionbar = React.createClass({
             if (!dropdownMenuItems)
                dropdownMenuItems = {}
             if(valida_action == true){
-            var action_name = action_names[children.length + Object.keys(dropdownMenuItems).length + k];
+            var action_name = action_names[children.length + Object.keys(dropdownMenuItems).length];
             valida_action = false;
             }
             else
