@@ -35,7 +35,6 @@ var HActionbar = React.createClass({
             render_menu_item();
         if (dropdownMenuItems)
             createDropdownMenu();
-//        children.unshift(React.createElement("button", {style: {position: 'fixed', top: 0, right: 0},onClick: function(){_this.refs.menu.toggleDropDown()}}, 'menu'));
         return React.createElement("div", {key: "ActionBar", className: 'h_actionbar', children: children});
 
         function render_primary()
