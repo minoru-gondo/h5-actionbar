@@ -8,7 +8,6 @@ window.hsession = {
 var mock_store = {
     actions: {
         ___mock___
-        ___menudropdown___
     }
 };
 //var mock_store = {
