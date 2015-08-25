@@ -94,7 +94,7 @@ var HActionbar = React.createClass({
                    key: "MenuDropDrow",
                    ref: 'menu',
                    actions: dropdownMenuItems,
-                   icon: _this.props.icon + " position_icon_actionbar"
+                   icon: _this.props.icon
                });
                children.unshift(chield);
         }
