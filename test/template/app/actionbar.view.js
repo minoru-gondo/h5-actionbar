@@ -123,8 +123,7 @@ var AppAction = React.createClass({
     render: function () {
         return React.createElement(H5ActionBar, {
             store: mock_store,
-            icon: 'fa fa-ellipsis-v fa-2x',
-            className: ' position_icon_actionbar'
+            icon: 'fa fa-ellipsis-v fa-2x position_icon_actionbar'
         });
     }
 });
