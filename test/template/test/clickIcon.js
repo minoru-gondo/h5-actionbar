@@ -1,5 +1,5 @@
 this.Click = $page('icon', {
-    icon: ".fa-ellipsis-v"
+    icon: ".h_actionbar div icon"
 });
 
 var page = new Click(driver);
