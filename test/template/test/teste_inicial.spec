@@ -1,5 +1,6 @@
 @objects
    div   id  app 
+   body   css  view 
    actionbar  css .h_actionbar
    item css .h_iconDropDown_action
    icon_dropdown  css  .fa-ellipsis-v
