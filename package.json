@@ -1,27 +1,27 @@
 {
-  "name": "h5-actionbar",
-  "version": "0.0.4",
-  "description": "",
-  "main": "./src/actionbar.js",
-  "scripts": {
-    "test": "node node_modules/h5-test/bin/run"
-  },
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "react": "^0.13.3",
-    "h5-menudropdown": "latest",
-    "h5-action": "latest"
-  },
-  "devDependencies": {
-    "autoprefixer-loader": "^2.0.0",
-    "css-loader": "^0.14.4",
-    "flowcheck": "^0.2.7",
-    "flowcheck-loader": "^1.0.0",
-    "galenframework-cli": "^2.0.5",
-    "h5-test": "latest",
-    "jsx-loader": "^0.13.2",
-    "less-loader": "^2.2.0",
-    "style-loader": "^0.12.3"
-  }
+    "name": "h5-actionbar",
+    "version": "0.0.5",
+    "description": "",
+    "main": "./src/actionbar.js",
+    "scripts": {
+        "test": "node node_modules/h5-test/bin/run"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "react": "^0.13.3",
+        "h5-menudropdown": "latest",
+        "h5-action": "latest"
+    },
+    "devDependencies": {
+        "autoprefixer-loader": "^2.0.0",
+        "css-loader": "^0.14.4",
+        "flowcheck": "^0.2.7",
+        "flowcheck-loader": "^1.0.0",
+        "galenframework-cli": "^2.0.5",
+        "h5-test": "latest",
+        "jsx-loader": "^0.13.2",
+        "less-loader": "^2.2.0",
+        "style-loader": "^0.12.3"
+    }
 }
